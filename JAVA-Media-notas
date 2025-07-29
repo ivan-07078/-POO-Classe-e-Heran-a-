@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+        char opcao;
+        String relatorioFinal = "";
+
+        do {
+            System.out.print("Digite o nome do aluno: ");
+            String nome = leia.nextLine();
+
+            double soma = 0;
+            int quantidadeNotas = 3;
+
+            for (int i = 1; i <= quantidadeNotas; i++) {
+                System.out.print("Digite a nota " + i + ": ");
+                double nota = leia.nextDouble();
+              soma = soma + nota;
+            }
+
+            double media = soma / quantidadeNotas;
+            leia.nextLine(); 
+
+            System.out.println("Média de " + nome + ": " + media);
+
+
+            relatorioFinal += "- " + nome + " | Média: " + media + "\n";
+
+            System.out.print("Deseja cadastrar outro aluno? (s/n): ");
+            opcao = leia.nextLine().toLowerCase().charAt(0);
+
+        } while (opcao == 's');
+
+
+        System.out.println("\n Alunos Cadastrados:");
+        System.out.println(relatorioFinal);
+
+        System.out.println("Programa encerrado.");
+    }
+}
+
+
+
+  
+   
